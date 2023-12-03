@@ -1,0 +1,30 @@
+org 100
+
+code segment 
+    
+    assume cs:code, ds:code
+    
+   
+  mov ax,87h
+    mov bl, 2h
+    div bl
+    cmp ah,0h
+    je even
+    jne odd
+    
+    even: 
+    mov cx,2h
+    jmp exit
+    
+    odd: 
+    mov cx,1h
+    jmp exit
+    
+   
+   exit:
+   
+    
+    hlt
+    code ends
+
+end
