@@ -1,0 +1,45 @@
+org 100
+
+code segment 
+    
+    assume cs:code, ds:code
+    
+  mov ax, 6d
+  mov bx,ax
+  mov cl, 2d 
+  div cl
+  
+  cmp ah, 0d
+  
+  je second_check
+  jne not_divisible
+  
+  second_check:
+  
+  mov ax,bx
+  
+  mov bl, 3d
+  div bl
+  cmp ah, 0d
+  
+  je divisible
+  jne not_divisible
+  
+  divisible:
+  
+  mov cx, 1d
+  jmp exit
+  
+  not_divisible:
+  
+  mov cx, 2d
+  jmp exit
+  
+   
+   exit:
+   
+    
+    hlt
+    code ends
+
+end
