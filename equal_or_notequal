@@ -1,0 +1,30 @@
+org 100
+
+code segment 
+    
+    assume cs:code, ds:code
+    
+   
+  mov ax,29h
+    mov bl, 2h
+    div bl
+    cmp ah,1h
+    je equal
+    jne not_equal
+    
+    equal: 
+    mov cx,2h
+    jmp exit
+    
+    not_equal: 
+    mov cx,1h
+    jmp exit
+    
+   
+   exit:
+   
+    
+    hlt
+    code ends
+
+end
