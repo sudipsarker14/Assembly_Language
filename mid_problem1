@@ -1,0 +1,38 @@
+
+org 100h
+
+code segment
+    
+    assume cs:code, ds:code    
+    
+   mov ax, 7FFFh
+   mov bx, 0001h
+   add ax,bx    
+   ; ax = 7FFF = 0111 1111 1111 1111
+   ; bx = 0001 = 0000 0000 0000 0001
+   ; ax = 8000 = 1000 0000 0000 0000      
+   sub al,bl    
+    ;                     
+   ;    al = 00 = 0000 0000
+   ;    bl = 01 = 0000 0001
+   ;    al = FD = 1111 1111           
+   dec al
+   ; al = FC = 1111 1111
+   ; al = FE = 1111 1110     
+   neg al               
+   ; al = FE = 1111 1110
+   
+   ; 1s =      0000 0001
+   ;                  +1
+   ;2s=al=02   0000 0010      
+   xchg ax,bx
+   ; ax = 0001; bx = 8002          
+   
+    
+    
+    hlt
+    code ends
+ends
+
+ret
+
