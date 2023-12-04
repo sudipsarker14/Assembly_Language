@@ -26,7 +26,9 @@ code segment
    ;                  +1
    ;2s=al=02   0000 0010      
    xchg ax,bx
-   ; ax = 0001; bx = 8002          
+   ; ax = 0001; bx = 8002  
+   
+   ;SF = 0, ZF = 0, PF = 0, OF = 0, CF = 1        
    
     
     
@@ -35,4 +37,8 @@ code segment
 ends
 
 ret
+
+
+
+
 
