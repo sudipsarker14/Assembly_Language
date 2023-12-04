@@ -1,0 +1,25 @@
+
+org 100h
+
+code segment
+    
+    assume cs:code, ds:code    
+    
+   mov ax, 1123h
+   mov bx, 2234h
+   
+   mov cx, 02h
+   
+   div cl    
+   neg bx
+   shr ax, 1    
+   mul cx 
+   xor ax, dx
+    
+    
+    hlt
+    code ends
+ends
+
+ret
+
