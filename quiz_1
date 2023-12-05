@@ -1,0 +1,28 @@
+org 100h
+
+code segment
+    
+    assume cs:code, ds: code
+    
+   mov ax, 1234h
+   mov bx, 2h
+   mov dx, 3456h
+   
+   mul bl
+   xor ax, ax
+   add ax, dx
+   neg ax
+   not ax
+   
+   ;shl ax, 2
+   ;sar bx, 2
+   ;sal ax, 2
+   ;shr ax, 2
+   ;rol bx, 2
+   
+    
+    hlt
+    code ends
+end
+
+ret
