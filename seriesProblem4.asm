@@ -9,7 +9,7 @@ code segment
    
    sdp:      
    cmp cx, 7d
-   jge exit
+   jg exit
    mul bx
    inc cx
    jmp sdp
