@@ -1,0 +1,20 @@
+code segment
+assume cs:code, ds: code
+   org 100h
+   mov cx, 2003d
+   mov ax, 5d
+   mov bx, 2d 
+   sdp:
+   
+   cmp cx, 2010d 
+   jg exit
+   mul bx
+   inc cx 
+   jmp sdp
+   
+   
+   exit:
+   hlt 
+
+  code ends
+end
